@@ -1,0 +1,5 @@
+*.zip
+StudentAssets/
+.vscode/
+bin/
+obj/
