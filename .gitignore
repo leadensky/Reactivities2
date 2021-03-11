@@ -444,3 +444,5 @@ $RECYCLE.BIN/
 *.zip
 StudentAssets/
 appsettings.json
+
+reactivities.db
