@@ -13,7 +13,7 @@ export default observer(function RegisterForm() {
     <Formik
       initialValues={{
         displayName: "",
-        userName: "",
+        username: "",
         email: "",
         password: "",
         error: null,
@@ -23,7 +23,7 @@ export default observer(function RegisterForm() {
       }
       validationSchema={Yup.object({
         displayName: Yup.string().required(),
-        userName: Yup.string().required(),
+        username: Yup.string().required(),
         email: Yup.string().required().email(),
         password: Yup.string().required(),
       })}
@@ -41,7 +41,7 @@ export default observer(function RegisterForm() {
             align="center"
           />
           <MyTextInput name="displayName" placeholder="Display Name" />
-          <MyTextInput name="userName" placeholder="Username" />
+          <MyTextInput name="username" placeholder="Username" />
           <MyTextInput name="email" placeholder="Email" />
           <MyTextInput name="password" placeholder="Password" type="password" />
           <ErrorMessage
