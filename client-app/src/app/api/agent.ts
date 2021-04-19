@@ -73,7 +73,8 @@ const request = {
 const Activities = {
   list: () => request.get<Activity[]>("/activities"),
   details: (id: string) => request.get<Activity>(`/activities/${id}`),
-  create: (activity: ActivityFormValues) => request.post<void>("/activities", activity),
+  create: (activity: ActivityFormValues) =>
+    request.post<void>("/activities", activity),
   update: (activity: ActivityFormValues) =>
     request.put<void>(`/activities/${activity.id}`, activity),
   delete: (id: string) => request.del<void>(`/activities/${id}`),
@@ -93,12 +94,13 @@ const Profiles = {
     let formData = new FormData();
     formData.append("File", file);
     return axios.post<Photo>("photos", formData, {
-      headers: {"Content-type": "multipart/form-data"}
-    })
+      headers: { "Content-type": "multipart/form-data" },
+    });
   },
   setMainPhoto: (id: string) => request.post(`/photos/${id}/setMain`, {}),
-  deletePhoto: (id: string) => request.del(`/photos/${id}`)
-}
+  deletePhoto: (id: string) => request.del(`/photos/${id}`),
+  updateProfile: (profile: Partial<Profile>) => request.put(`/profiles`, profile),
+};
 
 const agent = {
   Activities,
